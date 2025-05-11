@@ -140,6 +140,9 @@ function module:PLAYER_REGEN_DISABLED()
 end
 
 function module:CheckForRequest(msg, name)
+	if GetNumPartyMembers() = 0 and GetNumRaidMembers() = 0 then
+		return; -- checks if the player is in a party or raid, if not, returns (does nothing)
+	end 
 	print(msg);
 	print(name);
 	if module:ContainsWholeWord(msg, "port") or module:ContainsWholeWord(msg, "porten") or module:ContainsWholeWord(msg, "summon") or module:ContainsWholeWord(msg, "123") or module:ContainsWholeWord(msg, "summ") then
