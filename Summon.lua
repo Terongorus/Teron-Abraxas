@@ -326,11 +326,15 @@ function module:GetUnitId(name)
 	return nil
 end
 
-function module:SummonPlayer(name)	
+function module:SummonPlayer(name)
 	local unitId = module:GetUnitId(name)
 	local playerZone = self:GetZone("player")
 	local targetZone = self:GetZone(unitId)
 	
+	if unitId == nil then
+		self:Print(string.format(L["<Abraxas> %s is not in your party or raid"], name))
+		return
+	end	
 	if UnitAffectingCombat("player") then
 		self:Print(L["You are in combat"])
 	elseif unitId ~= nil and UnitAffectingCombat(unitId) then
