@@ -397,7 +397,7 @@ function module:UpdatePlayerPositions()
 end
 
 function module:ContainsWholeWord(input, word)
-	if not string.find(input, "%f[%a]" .. word .. "%f[%A]") then
+	if not string.find(input, "%f[%w]" .. word .. "%f[%W]") then
 		return false
 	else
 		return true
