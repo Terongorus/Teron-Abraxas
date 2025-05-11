@@ -294,7 +294,7 @@ function Abraxas:CastedCurse(curse)
 end
 
 function Abraxas:HasDebuff(iconPath)
-	for i = 1, 16 do
+	for i = 1, 40 do
 		local debuff = UnitDebuff("target", i)
 		if debuff and debuff == iconPath then
 			return true

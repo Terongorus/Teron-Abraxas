@@ -140,6 +140,8 @@ function module:PLAYER_REGEN_DISABLED()
 end
 
 function module:CheckForRequest(msg, name)
+	print(msg);
+	print(name);
 	if module:ContainsWholeWord(msg, "port") or module:ContainsWholeWord(msg, "porten") or module:ContainsWholeWord(msg, "summon") or module:ContainsWholeWord(msg, "123") or module:ContainsWholeWord(msg, "summ") then
 		--module:AddPlayer(name)
 		module:Sync("Request " .. name)
