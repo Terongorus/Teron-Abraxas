@@ -333,7 +333,7 @@ function module:SummonPlayer(name)
 	
 	if UnitAffectingCombat("player") then
 		self:Print(L["You are in combat"])
-	elseif UnitAffectingCombat(unitId) then
+	elseif unitId ~= nil and UnitAffectingCombat(unitId) then
 		self:Print(string.format(L["%s is in combat"], name))
 	elseif not self:ValidZone(playerZone, targetZone) then
 		self:Print(string.format(L["You can't summon someone from |cffff0000%s|r to %s"], targetZone, playerZone))
