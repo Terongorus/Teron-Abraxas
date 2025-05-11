@@ -419,6 +419,9 @@ end
 
 function module:GetPlayerText(name)
 	local unitId = module:GetUnitId(name)
+	if unitId == nil then
+		unitId = name
+	end
 	local coloredName = tostring(coloredNames[unitId])
 
 	return coloredName
